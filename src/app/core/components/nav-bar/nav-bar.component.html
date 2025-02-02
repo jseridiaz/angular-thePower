@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="header__imgcontainer">
+    <img
+      src="/images/thePower.webp"
+      class="header__img"
+      alt="img-thePower-Academy"
+      (click)="navigateToHome()"
+    />
+  </div>
+  <nav class="header__navbar">
+    <li class="header__li">
+      <a class="header__links" routerLink="/home" routerLinkActive="active"
+        >Home</a
+      >
+    </li>
+    <li class="header__li">
+      <a class="header__links" routerLink="/courses" routerLinkActive="active"
+        >Courses</a
+      >
+    </li>
+  </nav>
+  <div class="header__containerbutton">
+    <button class="header__button">Ask for more Info</button>
+  </div>
+</header>
+<p>nav-bar works!</p>
