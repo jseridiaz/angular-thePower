@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding-inline: 1rem;
-  background-color: #cbcbcb;
+  background-color: #1f3741;
   height: 100px;
   &__imgcontainer {
     width: 200px;
@@ -28,11 +28,14 @@
     gap: 1rem;
   }
   &__links {
-    color: black;
-    & .active {
-      text-decoration: underline;
-      font-size: 2rem;
+    color: white;
+    &:hover {
+      transition: all 0.5s;
+      color: rgb(122, 246, 192);
     }
+  }
+  &__links.active {
+    text-decoration: underline;
   }
 
   // &__links:link,
@@ -40,6 +43,8 @@
   //   color: black;
   // }
   &__button {
-    @include buttonPart(fit-content, 50px, 5px, white);
+    @include buttonPart(fit-content, 40px, 5px 25px, rgb(122, 246, 192));
+    border: none;
+    font-weight: 600;
   }
 }

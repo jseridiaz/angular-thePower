@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 html,
 body {
   margin: 0px;
@@ -6,6 +8,7 @@ body {
   min-height: 100svh;
 }
 * {
+  font-family: "Roboto", serif;
   box-sizing: border-box;
   list-style: none;
 }
@@ -17,5 +20,5 @@ a {
   height: $height;
   background-color: $color;
   padding: $padding;
-  border-radius: 0.4rem;
+  cursor: pointer;
 }
