@@ -1,0 +1,11 @@
+.infocard {
+  > p {
+    text-align: center;
+  }
+  &__firstparraf {
+    font-size: 65px;
+  }
+  &__secondparraf {
+    font-size: 25px;
+  }
+}

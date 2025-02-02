@@ -2,25 +2,36 @@
   <div class="hero__videocontainer">
     <video
       class="hero__video"
-      src="video/videoHero.mp4"
+      src="https://framerusercontent.com/assets/FB93HHGqbqC0NIv6SkUBJ7jUgs.mp4"
       loop
       autoplay
       [muted]="true"
       preload="auto"
+      fetchpriority="high"
       playsinline
       poster="https://framerusercontent.com/images/1tVaDMm1L4L0jUvgAK3WBw3r7IM.png"
     ></video>
   </div>
   <article class="hero__introduction">
-    <h1>More than a university</h1>
-    <p>
-      “thePower Education the school that is leading the revolution in
-      education”
-    </p>
+    <p>More than an university</p>
+    <h1>
+      <strong>
+        “thePower Education the school that is leading the revolution in
+        education”</strong
+      >
+    </h1>
     <img
       src="https://framerusercontent.com/images/zt8GWfDpv8ZQ1pmBJ88nRgCn7o.png"
       alt="Financial-times-img"
       loading="lazy"
     />
   </article>
+</section>
+<section class="section-info">
+  <app-info-card
+    class="section-info__container"
+    *ngFor="let info of infos"
+    [quantity]="info.firstParraf"
+    [text]="info.secondParraf"
+  ></app-info-card>
 </section>
