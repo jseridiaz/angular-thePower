@@ -1,1 +1,40 @@
-<p>course-card works!</p>
+<article class="single-card" *ngIf="course">
+  <div class="single-card__container-img">
+    <img
+      class="single-card__img"
+      [src]="course.img"
+      [alt]="alt1"
+      loading="lazy"
+    />
+  </div>
+  <div class="single-card__container-brand">
+    <img
+      class="single-card__branding"
+      [src]="course.imgBrand"
+      [alt]="course.altBrand"
+      loading="lazy"
+      [ngStyle]="{ width: course.altBrand === 'TheMba' ? '25%' : '45%' }"
+    />
+    <p class="single-card__brandname" *ngIf="course.nameNextiming">
+      {{ course.nameNextiming }}
+    </p>
+  </div>
+  <div class="single-card__container-description">
+    <h4 class="single-card__title">{{ course.title }}</h4>
+    <p
+      class="single-card__description"
+      [innerHTML]="highlightStrong(course.description)"
+    ></p>
+  </div>
+  <div class="single-card__container-duration">
+    <p class="single-card__modality">{{ course.modality }}</p>
+    <p class="single-card__duration">{{ course.duration }} hours</p>
+  </div>
+  <div class="single-card__container-price">
+    <p class="single-card__price">{{ course.price }}€</p>
+    <p class="single-card__availability">{{ course.availability }} seats</p>
+  </div>
+  <div class="single-card__container-button">
+    <button class="single-card__button">Enroll now</button>
+  </div>
+</article>

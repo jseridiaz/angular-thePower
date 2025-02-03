@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { InfoCardComponent } from '../../core/components/info-card/info-card.component';
 import { CommonModule } from '@angular/common';
-import { InfoCards } from './info.modules';
+import { CourseType, InfoCards } from './info.modules';
+import { CourseCardComponent } from '../../shared/course-card/course-card.component';
+import { arrayCourses } from './arrayCourses';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, InfoCardComponent],
+  imports: [CommonModule, InfoCardComponent, CourseCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -16,4 +18,5 @@ export class HomeComponent {
     { firstParraf: '+600', secondParraf: 'Companies train their employees' },
     { firstParraf: '98%', secondParraf: 'Satisfaction' },
   ];
+  public coursesList: CourseType[] = arrayCourses.splice(0, 4);
 }

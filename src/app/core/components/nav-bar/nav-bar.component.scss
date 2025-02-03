@@ -1,4 +1,4 @@
-@import "../../../../styles.scss";
+@use "../../../../variables.scss" as *;
 
 .header {
   display: flex;
@@ -15,14 +15,16 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-
       cursor: pointer;
     }
   }
   &__navbar {
-    display: flex;
     width: 50%;
     font-size: 1.2rem;
+  }
+  &__navbar-ul {
+    display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -44,7 +46,6 @@
   // }
   &__button {
     @include buttonPart(fit-content, 40px, 5px 25px, rgb(122, 246, 192));
-    border: none;
     font-weight: 600;
   }
 }

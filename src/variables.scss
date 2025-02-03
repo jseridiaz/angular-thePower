@@ -1,0 +1,35 @@
+// Variables
+$color-primary: rgb(30, 55, 64);
+$background-colorCard-primary: #f3f3f3;
+$background-colorCard-secundary: orange;
+$background-button-primary: rgb(30, 55, 64);
+// margin
+$margin-xs: 7px;
+$margin-s: 1rem;
+$margin-m: 1.4rem;
+$margin-l: 2rem;
+$margin-xl: 3rem;
+// padding
+$padding-xs: 7px;
+$padding-s: 1rem;
+$padding-m: 1.4rem;
+$padding-l: 2rem;
+$padding-xl: 3rem;
+// Gap
+$gap-xs: 7px;
+$gap-s: 1rem;
+$gap-m: 1.4rem;
+$gap-l: 2rem;
+$gap-xl: 3rem;
+
+// mixings
+
+@mixin buttonPart($width, $height, $padding, $color, $brRadius: 0px) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+  border-radius: $brRadius;
+  padding: $padding;
+  border: none;
+  cursor: pointer;
+}

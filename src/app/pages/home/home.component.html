@@ -35,3 +35,14 @@
     [text]="info.secondParraf"
   ></app-info-card>
 </section>
+<section class="section-courses">
+  <h3 class="section-courses__title">Discover the most in-demand programs</h3>
+  <article class="section-courses__maincontainer" *ngIf="coursesList">
+    <ul class="section-courses__list">
+      <app-course-card
+        [course]="courses"
+        *ngFor="let courses of coursesList"
+      ></app-course-card>
+    </ul>
+  </article>
+</section>

@@ -1,4 +1,4 @@
-@use "../../../styles.scss" as *;
+@use "../../../variables.scss" as *;
 .hero {
   &__videocontainer {
     height: 520px;
@@ -40,12 +40,31 @@
 }
 .section-info {
   display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
   justify-content: space-around;
+  padding: 1rem 0px;
+
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25%;
+    width: 21%;
+  }
+}
+.section-courses {
+  width: 100%;
+  padding: 1rem;
+  &__title {
+    font-size: 45px;
+    font-weight: 500;
+    padding: 1rem 0px;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: $gap-l;
   }
 }

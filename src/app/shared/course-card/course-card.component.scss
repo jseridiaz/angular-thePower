@@ -1,0 +1,69 @@
+@use "../../../variables.scss" as *;
+.single-card {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  gap: $gap-m;
+  min-height: 420px;
+  background-color: $background-colorCard-primary;
+  border-radius: 0 0rem 0 29%;
+  &__container-img ~ div {
+    padding: 0 $padding-s;
+    > p {
+      text-align: center;
+    }
+  }
+  &__container-img ~ div:nth-child(3) {
+    > p {
+      text-align: start;
+    }
+  }
+
+  &__container-img {
+    overflow: hidden;
+    height: 150px;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: 0.6s;
+    &:hover {
+      scale: 1.25;
+    }
+  }
+  &__container-brand {
+    width: 100%;
+  }
+  &__branding {
+    width: 50%;
+    height: 56px;
+    object-fit: contain;
+  }
+  &__container-description {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-xs;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  &__container-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $margin-s;
+  }
+  &__button {
+    @include buttonPart(
+      50%,
+      fit-content,
+      $padding-xs,
+      $background-button-primary,
+      7px
+    );
+    color: white;
+    align-content: center;
+  }
+}
