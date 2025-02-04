@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-// @import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap";
-$color-primary: rgb(30, 55, 64);
-$background-colorCard-primary: #f3f3f3;
+@use "./variables.scss" as *;
 
 html,
 body {
@@ -20,6 +18,11 @@ body {
 }
 a {
   text-decoration: none;
+}
+.flex-containerrow {
+  display: flex;
+  align-items: center;
+  gap: $gap-xs;
 }
 @mixin buttonPart($width, $height, $padding, $color) {
   width: $width;

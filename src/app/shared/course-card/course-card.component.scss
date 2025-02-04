@@ -1,28 +1,19 @@
 @use "../../../variables.scss" as *;
+
 .single-card {
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   width: 320px;
-  gap: $gap-m;
-  min-height: 420px;
+  height: 550px;
   background-color: $background-colorCard-primary;
   border-radius: 0 0rem 0 29%;
-  &__container-img ~ div {
-    padding: 0 $padding-s;
-    > p {
-      text-align: center;
-    }
-  }
-  &__container-img ~ div:nth-child(3) {
-    > p {
-      text-align: start;
-    }
-  }
 
   &__container-img {
     overflow: hidden;
     height: 150px;
   }
+
   &__img {
     width: 100%;
     height: 100%;
@@ -35,6 +26,7 @@
   }
   &__container-brand {
     width: 100%;
+    padding-inline: $padding-xs;
   }
   &__branding {
     width: 50%;
@@ -45,25 +37,62 @@
     display: flex;
     flex-direction: column;
     gap: $gap-xs;
+    padding-inline: $padding-s;
   }
   &__title {
     font-weight: 600;
     font-size: 1.1rem;
   }
+
+  &__container-global {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $gap-m;
+
+    > div:nth-child(1) ~ div {
+      position: relative;
+      align-content: center;
+      padding-top: 15px;
+      border-top: 2px solid rgb(163, 163, 163);
+      display: flex;
+      justify-content: space-evenly;
+
+      > p {
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+      > p.single-card__price {
+        font-weight: 600;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
   &__container-button {
     display: flex;
     justify-content: center;
     margin-bottom: $margin-s;
+    padding-bottom: $padding-xs;
   }
   &__button {
     @include buttonPart(
       50%,
-      fit-content,
+      45px,
       $padding-xs,
       $background-button-primary,
       7px
     );
+    transform: translateX(10%);
+    font-weight: 700;
     color: white;
     align-content: center;
+
+    &:hover {
+      transition: all 0.6s;
+      background-color: $background-button-primary-hover;
+      transform: scale(1.05) translateX(10%);
+    }
   }
 }

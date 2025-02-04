@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InfoCardComponent } from '../../core/components/info-card/info-card.component';
 import { CommonModule } from '@angular/common';
 import { CourseType, InfoCards } from './info.modules';
@@ -18,5 +18,8 @@ export class HomeComponent {
     { firstParraf: '+600', secondParraf: 'Companies train their employees' },
     { firstParraf: '98%', secondParraf: 'Satisfaction' },
   ];
-  public coursesList: CourseType[] = arrayCourses.splice(0, 4);
+  public coursesList: CourseType[] = arrayCourses.slice(0, 4);
+  // ngOnInit(): void {
+  //   this.coursesList = this.coursesList;
+  // }
 }

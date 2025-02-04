@@ -1,0 +1,62 @@
+@use "../../../../variables.scss" as *;
+.footer {
+  display: flex;
+  align-items: center;
+  border-top: 2px solid black;
+  height: 137px;
+  min-height: 137px;
+  margin-top: $margin-l;
+  background-color: $background-button-primary;
+  justify-content: space-between;
+  * {
+    color: whitesmoke;
+  }
+  &__imgcontainer {
+    position: relative;
+    left: 2%;
+    padding: $padding-s;
+  }
+  &__img {
+    object-fit: contain;
+    width: 140px;
+    height: 100px;
+  }
+  &__gmailcontainer {
+    display: flex;
+    gap: $gap-xs;
+    align-items: center;
+    place-content: center;
+  }
+  &__rrsscontainer {
+    position: relative;
+    right: 5%;
+  }
+  &__createdcontainer {
+    > p {
+      text-align: center;
+    }
+  }
+  &__personalinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    padding: $padding-s;
+  }
+  &__listrrss {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    padding: 5%;
+    justify-content: space-between;
+  }
+  &__imglinkedin {
+    width: 25px;
+  }
+  &__imgportfolio {
+    width: 25px;
+  }
+  &__imggithub {
+    width: 25px;
+  }
+}

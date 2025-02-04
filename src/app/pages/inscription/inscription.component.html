@@ -1,1 +1,49 @@
-<p>inscription works!</p>
+<div class="container-form">
+  <form class="form" (submit)="handleSubmit()">
+    <div>
+      <label for="">Curso</label>
+      <input type="text" />
+    </div>
+    <div class="form__name-container">
+      <div>
+        <label for="input-name">Name</label>
+        <input type="text" id="input-name" />
+      </div>
+      <div>
+        <label for="input-surname">Surname</label>
+        <input type="text" id="input-surname" />
+      </div>
+    </div>
+    <div class="form__contact-container">
+      <div>
+        <label for="input-name">Email</label>
+        <input type="text" id="input-name" />
+      </div>
+      <div>
+        <label for="input-telefon">Telefon number</label>
+        <input type="tel" id="input-telefon" />
+      </div>
+    </div>
+    <div class="form__adresse-container">
+      <label for="input-adresse">Adresse</label>
+      <input type="text" id="input-adresse" />
+    </div>
+    <div class="form__terms-container">
+      <input type="checkbox" name="" id="condition-terms" />
+      <label for="condition-terms"
+        >I have read the conditions terms and agree them</label
+      >
+    </div>
+    <div><button type="submit">Finish registration</button></div>
+  </form>
+  <section class="brife-summary">
+    <h3>Brife summary</h3>
+    <div>
+      <h4>Title of the course</h4>
+      <p>description</p>
+    </div>
+    <div>
+      <p>Total: 400€</p>
+    </div>
+  </section>
+</div>

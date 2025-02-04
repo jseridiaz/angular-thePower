@@ -19,22 +19,25 @@
       {{ course.nameNextiming }}
     </p>
   </div>
-  <div class="single-card__container-description">
-    <h4 class="single-card__title">{{ course.title }}</h4>
-    <p
-      class="single-card__description"
-      [innerHTML]="highlightStrong(course.description)"
-    ></p>
-  </div>
-  <div class="single-card__container-duration">
-    <p class="single-card__modality">{{ course.modality }}</p>
-    <p class="single-card__duration">{{ course.duration }} hours</p>
-  </div>
-  <div class="single-card__container-price">
-    <p class="single-card__price">{{ course.price }}€</p>
-    <p class="single-card__availability">{{ course.availability }} seats</p>
-  </div>
-  <div class="single-card__container-button">
-    <button class="single-card__button">Enroll now</button>
+  <div class="single-card__container-global">
+    <div class="single-card__container-description">
+      <h4 class="single-card__title">{{ course.title }}</h4>
+      <p
+        class="single-card__description"
+        [innerHTML]="highlightStrong(course.description)"
+      ></p>
+    </div>
+    <div class="single-card__container-duration">
+      <p class="single-card__modality">{{ course.modality }}</p>
+      <p class="single-card__duration">{{ course.duration }} hours</p>
+    </div>
+    <div class="single-card__container-price">
+      <p class="single-card__price">{{ course.price }}€</p>
+      <p class="single-card__availability">{{ course.availability }} seats</p>
+    </div>
+
+    <div class="single-card__container-button">
+      <button class="single-card__button">Enroll now</button>
+    </div>
   </div>
 </article>

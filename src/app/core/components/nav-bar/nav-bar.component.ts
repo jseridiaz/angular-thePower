@@ -8,19 +8,15 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent {
   constructor(private router: Router) {}
   public proob =
     'https://framerusercontent.com/images/vYdl5MUPEybOKiP53Xmm8Ets.png?scale-down-to=512';
-  public ngOnInit(): void {
-    console.log(
-      this.proob.indexOf('images'),
-      this.proob[30],
-      this.proob.lastIndexOf('.'),
-      this.proob.slice(30, 61)
-    );
-  }
+
   public navigateToHome() {
     this.router.navigateByUrl('/home');
+  }
+  public navigateToCourse() {
+    this.router.navigate(['/courses']);
   }
 }
