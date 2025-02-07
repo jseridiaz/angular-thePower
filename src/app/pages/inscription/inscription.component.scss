@@ -5,6 +5,7 @@
   min-height: 87svh;
   padding: $padding-m;
   display: flex;
+  gap: $gap-s;
 }
 .form {
   display: flex;
@@ -14,9 +15,94 @@
   width: 70%;
   height: fit-content;
   background-color: $background-white;
+  &__title {
+    font-size: 18px;
+  }
+  &__name-container,
+  &__contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__container-course {
+    @include displayColumn;
+  }
+  &__container-first-name {
+    @include displayColumn;
+  }
+  &__container-surname {
+    @include displayColumn;
+  }
+  &__container-email {
+    @include displayColumn;
+  }
+  &__container-telefon {
+    @include displayColumn;
+  }
+  &__adresse-container {
+    @include displayColumn;
+    width: 90%;
+  }
+  input:not(input[type="checkbox"]) {
+    border: none;
+    outline: 1.6px solid $border-color-form;
+    border-radius: $border-radius-input;
+    padding: $padding-xs;
+  }
+  input[type="checkbox"] {
+    margin-left: 0.6rem;
+
+    &:focus {
+      outline: none;
+      // box-shadow: 2px 2px 1px black;
+    }
+  }
+  &__terms-container {
+    display: flex;
+    gap: $gap-xs;
+  }
+  &__btn-submit {
+    @include buttonPart(
+      fit-content,
+      fit-content,
+      $padding-s,
+      $background-button-form,
+      4px
+    );
+    font-size: 1rem;
+    font-weight: 500;
+
+    &:hover {
+      transition: all 0.5s;
+      background-color: $border-color-form-hover;
+      color: aliceblue;
+    }
+  }
+  &__labelcheck,
+  &__checkbox {
+    cursor: pointer;
+  }
 }
 .brife-summary {
   width: 30%;
   background-color: $background-white;
   height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: $padding-m $padding-xs;
+  &__title {
+    width: 100%;
+    padding: $padding-xs;
+  }
+  &__container-course {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-s;
+    width: 100%;
+    padding: $padding-xs;
+  }
+  &__container-price {
+    width: 100%;
+    padding: $padding-xs;
+  }
 }

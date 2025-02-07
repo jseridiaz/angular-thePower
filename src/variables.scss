@@ -1,11 +1,19 @@
 // Variables
 $color-primary: rgb(30, 55, 64);
 $background-white: #ffff;
-$background-secundary: #f3f3f3;
+$background-secundary: #f0eded;
 $background-colorCard-primary: #f3f3f3;
 $background-colorCard-secundary: orange;
 $background-button-primary: rgb(30, 55, 64);
 $background-button-primary-hover: rgb(76, 221, 134);
+$background-button-form: #b0b0b077;
+
+// border color
+$border-color-form: rgba(128, 128, 128, 0.386);
+$border-color-form-hover: rgba(128, 128, 128);
+
+// Border radius
+$border-radius-input: 2px;
 
 // margin
 $margin-xs: 7px;
@@ -14,6 +22,7 @@ $margin-m: 1.4rem;
 $margin-l: 2rem;
 $margin-xl: 3rem;
 // padding
+$padding-xxs: 4px;
 $padding-xs: 7px;
 $padding-s: 1rem;
 $padding-m: 1.4rem;
@@ -36,4 +45,13 @@ $gap-xl: 3rem;
   padding: $padding;
   border: none;
   cursor: pointer;
+}
+@mixin displayColumn {
+  display: flex;
+  flex-direction: column;
+  padding: $padding-xs;
+  width: 50%;
+  gap: $gap-xs;
+  font-weight: 500;
+  font-size: 14px;
 }

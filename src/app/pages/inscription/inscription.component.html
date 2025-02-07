@@ -1,50 +1,61 @@
 <div class="container-form">
   <form class="form" (submit)="handleSubmit($event)">
-    <h1>Fill out the registration form</h1>
-    <div>
+    <h1 class="form__title">Fill out the registration form</h1>
+    <div class="form__container-course">
       <label for="">Curso</label>
-      <input type="text" />
+      <input type="text" [value]="course?.title" disabled />
     </div>
     <div class="form__name-container">
-      <div>
-        <label for="input-name">Name</label>
-        <input type="text" id="input-name" />
+      <div class="form__container-first-name">
+        <label for="input-name">First name</label>
+        <input type="text" id="input-name" placeholder="José" />
       </div>
-      <div>
+      <div class="form__container-surname">
         <label for="input-surname">Surname</label>
-        <input type="text" id="input-surname" />
+        <input type="text" id="input-surname" placeholder="Rivera" />
       </div>
     </div>
     <div class="form__contact-container">
-      <div>
-        <label for="input-name">Email</label>
-        <input type="text" id="input-name" />
+      <div class="form__container-email">
+        <label for="input-email">Email</label>
+        <input type="text" id="input-email" placeholder="example@gmail.com" />
       </div>
-      <div>
+      <div class="form__container-telefon">
         <label for="input-telefon">Telefon number</label>
         <input type="tel" id="input-telefon" />
       </div>
     </div>
     <div class="form__adresse-container">
       <label for="input-adresse">Adresse</label>
-      <input type="text" id="input-adresse" />
+      <input type="text" id="input-adresse" placeholder="10 example street " />
     </div>
     <div class="form__terms-container">
-      <input type="checkbox" name="" id="condition-terms" />
-      <label for="condition-terms"
+      <input
+        class="form__checkbox"
+        type="checkbox"
+        name=""
+        id="condition-terms"
+      />
+      <label class="form__labelcheck" for="condition-terms"
         >I have read the conditions terms and agree them</label
       >
     </div>
-    <div><button type="submit">Finish registration</button></div>
+    <div class="form__btn-container">
+      <button class="form__btn-submit" type="submit">
+        Finish registration
+      </button>
+    </div>
   </form>
   <section class="brife-summary">
-    <h3>Brife summary</h3>
-    <div>
-      <h4>Title of the course</h4>
-      <p>description</p>
+    <h3 class="brife-summary__title">Inscription summary</h3>
+    <div class="brife-summary__container-course">
+      <h4>{{ course?.title }}</h4>
+      <p>
+        {{ course?.description }}
+      </p>
     </div>
-    <div>
-      <p>Total: 400€</p>
+    <div class="brife-summary__container-price">
+      <p>Total: {{ course?.price }}€</p>
     </div>
   </section>
 </div>

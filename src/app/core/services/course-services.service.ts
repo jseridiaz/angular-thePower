@@ -18,4 +18,12 @@ export class CourseServicesService {
     const course = this.courses.find((el) => el.id === idCourse);
     if (course) course.availability--;
   }
+  public getById(idCourse: string): TypeCourses | undefined {
+    const course = this.courses.find((el) => el.id === idCourse);
+    if (course) {
+      return course;
+    } else {
+      return;
+    }
+  }
 }
