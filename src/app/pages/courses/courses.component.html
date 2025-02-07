@@ -1,1 +1,9 @@
-<section class="courses">courses works!</section>
+<section class="courses">
+  <h1 class="courses__title">All the courses of ThePower Academy</h1>
+  <article class="courses__main-container" *ngIf="allCourses">
+    <app-course-card
+      [course]="course"
+      *ngFor="let course of allCourses"
+    ></app-course-card>
+  </article>
+</section>

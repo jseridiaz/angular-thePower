@@ -1,4 +1,17 @@
+@use "../../../variables.scss" as *;
+
 .courses {
-  height: 100svh;
   min-height: 100svh;
+  padding: $padding-m;
+  &__title {
+    text-align: center;
+    margin-bottom: $margin-l;
+  }
+  &__main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: $gap-s;
+    row-gap: $gap-l;
+  }
 }

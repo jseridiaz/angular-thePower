@@ -15,6 +15,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'course/:id',
+    loadComponent: () =>
+      import('./pages/inscription/inscription.component').then(
+        (c) => c.InscriptionComponent
+      ),
+  },
+  {
     path: '**',
     loadComponent: () =>
       import('./pages/home/home.component').then((c) => c.HomeComponent),

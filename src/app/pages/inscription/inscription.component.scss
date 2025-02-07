@@ -2,4 +2,21 @@
 
 .container-form {
   background-color: $background-secundary;
+  min-height: 87svh;
+  padding: $padding-m;
+  display: flex;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-s;
+  padding: $padding-xs;
+  width: 70%;
+  height: fit-content;
+  background-color: $background-white;
+}
+.brife-summary {
+  width: 30%;
+  background-color: $background-white;
+  height: fit-content;
 }

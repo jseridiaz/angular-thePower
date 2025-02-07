@@ -2,7 +2,6 @@
   <div class="hero__videocontainer">
     <video
       class="hero__video"
-      src="https://framerusercontent.com/assets/FB93HHGqbqC0NIv6SkUBJ7jUgs.mp4"
       loop
       autoplay
       [muted]="true"
@@ -10,7 +9,12 @@
       fetchpriority="high"
       playsinline
       poster="https://framerusercontent.com/images/1tVaDMm1L4L0jUvgAK3WBw3r7IM.png"
-    ></video>
+    >
+      <source
+        src="https://framerusercontent.com/assets/FB93HHGqbqC0NIv6SkUBJ7jUgs.mp4"
+        type="video/mp4"
+      />
+    </video>
   </div>
   <article class="hero__introduction">
     <p>More than an university</p>

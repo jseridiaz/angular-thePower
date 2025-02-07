@@ -1,4 +1,4 @@
-<article class="single-card" *ngIf="course">
+<li class="single-card" *ngIf="course">
   <div class="single-card__container-img">
     <img
       class="single-card__img"
@@ -37,7 +37,9 @@
     </div>
 
     <div class="single-card__container-button">
-      <button class="single-card__button">Enroll now</button>
+      <button class="single-card__button" (click)="onSeeMoreInfo()">
+        Enroll now
+      </button>
     </div>
   </div>
-</article>
+</li>

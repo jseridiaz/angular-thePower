@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CourseType, KeyWordsArray } from '../../pages/home/info.modules';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-card',
@@ -10,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CourseCardComponent implements OnChanges {
   @Input() public course?: CourseType;
+  constructor(private router: Router) {}
   public alt1 = '';
   public keyWords: KeyWordsArray[] = [
     'The digital program',
@@ -17,6 +19,9 @@ export class CourseCardComponent implements OnChanges {
     'Without having to learn how to code',
     'Get a 360-degree view of business',
     'all the goals you set for yourself',
+    'you learn negotiation and communication techniques',
+    'business, sales, communication, and persuasion techniques',
+    'channels, metrics, tools, and methodologies ',
   ];
 
   public ngOnChanges(changes: SimpleChanges): void {
@@ -31,5 +36,9 @@ export class CourseCardComponent implements OnChanges {
       highlight = highlight.replace(regex, '<strong>$1</strong>');
     });
     return highlight;
+  }
+  public onSeeMoreInfo(): void {
+    if (!this.course) return;
+    this.router.navigate(['course', this.course.id]);
   }
 }
