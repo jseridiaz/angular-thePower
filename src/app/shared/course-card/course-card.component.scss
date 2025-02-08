@@ -10,6 +10,7 @@
   border-radius: 0 0rem 0 29%;
 
   &__container-img {
+    position: relative;
     overflow: hidden;
     height: 150px;
   }
@@ -101,5 +102,10 @@
       background-color: $background-button-primary-hover;
       transform: scale(1.05) translateX(10%);
     }
+  }
+}
+@media (max-width: 390px) {
+  .single-card {
+    width: 280px;
   }
 }

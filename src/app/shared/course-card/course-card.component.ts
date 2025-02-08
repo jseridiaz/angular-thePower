@@ -1,11 +1,11 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CourseType, KeyWordsArray } from '../../pages/home/info.modules';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-card',
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.scss',
 })

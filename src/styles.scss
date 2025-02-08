@@ -3,11 +3,14 @@
 
 html,
 body {
+  position: relative;
   margin: 0px;
   padding: 0px;
   min-height: 100svh;
 }
-
+fieldset {
+  border: none;
+}
 * {
   font-family: "Roboto", serif;
   box-sizing: border-box;

@@ -39,9 +39,19 @@
   &__container-telefon {
     @include displayColumn;
   }
-  &__adresse-container {
+  &__adress-container {
     @include displayColumn;
     width: 90%;
+  }
+
+  &__container-global-errors {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    > p {
+      position: absolute;
+      left: 0;
+    }
   }
   input:not(input[type="checkbox"]) {
     border: none;
@@ -51,15 +61,31 @@
   }
   input[type="checkbox"] {
     margin-left: 0.6rem;
+    transform: scale(1.4);
 
     &:focus {
-      outline: none;
+      // outline: none;
       // box-shadow: 2px 2px 1px black;
+      outline-color: #2384ff;
+      outline-offset: 1.5px;
+      // border: 4px solid rgb(28, 124, 219);
+      border-radius: 100%;
     }
+  }
+  &__labelcheck {
+    margin-left: 0.2rem;
+    align-content: center;
   }
   &__terms-container {
     display: flex;
+    margin-top: $margin-s;
     gap: $gap-xs;
+    position: relative;
+    align-items: center;
+  }
+  &__terms-error-container {
+    width: 100%;
+    margin-left: $margin-xs + 1px;
   }
   &__btn-submit {
     @include buttonPart(
@@ -71,11 +97,9 @@
     );
     font-size: 1rem;
     font-weight: 500;
-
-    &:hover {
-      transition: all 0.5s;
-      background-color: $border-color-form-hover;
-      color: aliceblue;
+    margin-top: $margin-l;
+    &:disabled {
+      opacity: 0.4;
     }
   }
   &__labelcheck,

@@ -47,6 +47,7 @@ $gap-xl: 3rem;
   cursor: pointer;
 }
 @mixin displayColumn {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: $padding-xs;

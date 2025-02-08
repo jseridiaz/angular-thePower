@@ -8,6 +8,7 @@
     margin-bottom: $margin-l;
   }
   &__main-container {
+    min-height: 100svh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

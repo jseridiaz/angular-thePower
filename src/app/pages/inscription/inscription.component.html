@@ -1,47 +1,176 @@
 <div class="container-form">
-  <form class="form" (submit)="handleSubmit($event)">
+  <form
+    class="form"
+    (submit)="handleSubmit($event)"
+    [formGroup]="useForm"
+    *ngIf="useForm"
+  >
     <h1 class="form__title">Fill out the registration form</h1>
-    <div class="form__container-course">
-      <label for="">Curso</label>
-      <input type="text" [value]="course?.title" disabled />
-    </div>
+    <fieldset class="form__container-course">
+      <label for="">Course</label>
+      <input
+        type="text"
+        [value]="course?.title"
+        formControlName="Course"
+        [ngStyle]="{ 'outline-color': useForm.get('Course')?.errors && 'red' }"
+        readonly
+      />
+      <div
+        *ngIf="useForm.get('Course')?.errors"
+        class="form__container-global-errors"
+      >
+        <p appErrors>* Course is required</p>
+      </div>
+    </fieldset>
     <div class="form__name-container">
-      <div class="form__container-first-name">
+      <fieldset class="form__container-first-name">
         <label for="input-name">First name</label>
-        <input type="text" id="input-name" placeholder="José" />
-      </div>
-      <div class="form__container-surname">
+        <input
+          type="text"
+          id="input-name"
+          placeholder="José"
+          formControlName="Name"
+          [ngStyle]="{
+            'outline-color':
+              useForm.get('Name')?.errors &&
+              useForm.get('Street')?.touched &&
+              'red'
+          }"
+        />
+        <div
+          class="form__container-global-errors"
+          *ngIf="useForm.get('Name')?.errors && useForm.get('Name')?.touched"
+        >
+          <p appErrors>* Name is required</p>
+        </div>
+      </fieldset>
+      <fieldset class="form__container-surname">
         <label for="input-surname">Surname</label>
-        <input type="text" id="input-surname" placeholder="Rivera" />
-      </div>
+        <input
+          type="text"
+          id="input-surname"
+          placeholder="Rivera"
+          formControlName="Surname"
+          [ngStyle]="{
+            'outline-color':
+              useForm.get('Surname')?.errors &&
+              useForm.get('Street')?.touched &&
+              'red'
+          }"
+        />
+        <div
+          class="form__container-global-errors"
+          *ngIf="
+            useForm.get('Surname')?.errors && useForm.get('Surname')?.touched
+          "
+        >
+          <p appErrors>* Surname is required</p>
+        </div>
+      </fieldset>
     </div>
     <div class="form__contact-container">
-      <div class="form__container-email">
+      <fieldset class="form__container-email">
         <label for="input-email">Email</label>
-        <input type="text" id="input-email" placeholder="example@gmail.com" />
-      </div>
-      <div class="form__container-telefon">
+        <input
+          type="text"
+          id="input-email"
+          placeholder="example@gmail.com"
+          formControlName="Email"
+          [ngStyle]="{
+            'outline-color':
+              useForm.get('Email')?.errors &&
+              useForm.get('Street')?.touched &&
+              'red'
+          }"
+        />
+        <div
+          class="form__container-global-errors"
+          *ngIf="useForm.get('Email')?.errors?.['required'] && useForm.get('Email')?.touched"
+        >
+          <p appErrors>* Email is required</p>
+        </div>
+        <div
+          *ngIf="useForm.get('Email')?.errors?.['email'] && useForm.get('Email')?.touched"
+        >
+          <p appErrors>Introuce a valid email</p>
+        </div>
+      </fieldset>
+      <fieldset class="form__container-telefon">
         <label for="input-telefon">Telefon number</label>
-        <input type="tel" id="input-telefon" />
+        <input
+          id="input-telefon"
+          formControlName="Number"
+          type="number"
+          [ngStyle]="{
+            'outline-color':
+              useForm.get('Number')?.errors &&
+              useForm.get('Street')?.touched &&
+              'red'
+          }"
+        />
+        <div
+          class="form__container-global-errors"
+          *ngIf="useForm.get('Number')?.errors?.['required'] && useForm.get('Number')?.touched"
+        >
+          <p appErrors>* Telefon number is required</p>
+        </div>
+        <div
+          *ngIf="useForm.get('Number')?.errors?.['pattern'] && useForm.get('Number')?.touched"
+        >
+          <p appErrors>* The telefon number must contain 9 numbers</p>
+        </div>
+      </fieldset>
+    </div>
+    <fieldset class="form__adress-container">
+      <label for="input-adress">Adress</label>
+      <input
+        type="text"
+        id="input-adress"
+        placeholder="10 example street "
+        formControlName="Street"
+        [ngStyle]="{
+          'outline-color':
+            useForm.get('Street')?.errors &&
+            useForm.get('Street')?.touched &&
+            'red'
+        }"
+      />
+      <div
+        class="form__container-global-errors"
+        *ngIf="useForm.get('Street')?.errors?.['required'] && useForm.get('Street')?.touched"
+      >
+        <p appErrors>* Street is required</p>
       </div>
-    </div>
-    <div class="form__adresse-container">
-      <label for="input-adresse">Adresse</label>
-      <input type="text" id="input-adresse" placeholder="10 example street " />
-    </div>
-    <div class="form__terms-container">
+      <div
+        class="form__container-global-errors"
+        *ngIf="useForm.get('Street')?.errors?.['adressWithoutNumber'] && useForm.get('Street')?.dirty"
+      >
+        <p appErrors>* The adress must have its number</p>
+      </div>
+    </fieldset>
+    <fieldset class="form__terms-container">
       <input
         class="form__checkbox"
         type="checkbox"
         name=""
         id="condition-terms"
+        formControlName="Conditions"
       />
       <label class="form__labelcheck" for="condition-terms"
         >I have read the conditions terms and agree them</label
       >
-    </div>
+      <div
+        class="form__terms-error-container form__container-global-errors"
+        *ngIf="
+          useForm.get('Conditions')?.errors &&
+          useForm.get('Conditions')?.touched
+        "
+      >
+        <p appErrors>The conditions terms must be accepted</p>
+      </div>
+    </fieldset>
     <div class="form__btn-container">
-      <button class="form__btn-submit" type="submit">
+      <button class="form__btn-submit" [disabled]="!useForm.valid">
         Finish registration
       </button>
     </div>

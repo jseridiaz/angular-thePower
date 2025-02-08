@@ -1,5 +1,8 @@
 @use "../../../../variables.scss" as *;
 .footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -7,6 +10,7 @@
   min-height: 100px;
   background-color: $background-button-primary;
   justify-content: space-between;
+  animation: opacity 3s ease-in;
   * {
     color: whitesmoke;
   }
@@ -59,5 +63,13 @@
   }
   &__imggithub {
     width: 25px;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
